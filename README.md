@@ -16,29 +16,28 @@ Capacitor AdMob is a native AdMob  implementation for IOS & Android. Now you can
 ### Screenshot
 | Basic Banner AD | TabBar Banner AD |
 | ------------- | ------------- |
-| ![Basic AdMob Banner](https://imgur.com/DQqpAD2)  | ![Basic AdMob Banner](https://imgur.com/pLcpqnn)  |
+| ![Basic AdMob Banner](https://i.imgur.com/DQqpAD2.png)  | ![Basic AdMob Banner](https://i.imgur.com/pLcpqnn.png)  |
 
 
-Download Demo App from **[Here](https://github.com/rahadur/capacitor-admob/admob-demo)**
+Download Demo App from **[Here](https://github.com/rahadur/capacitor-admob/tree/master/admob-demo)**
 ```console
-$ cd admob-demo
+cd admob-demo
 
+npm install
 
-$ npm install
+ionic build
 
-$ ionic build
+npx cap copy
 
-$ npx cap copy
+npx cap sync 
 
-$ npx cap sync 
+npx cap update
 
-$ npx cap update
-
-$ npx cap open android
+npx cap open android
 
 ============== Or just use this command ===========
 
-$ npm install & ionic build & npx cap copy & npx cap sync & npx cap update & npx cap open android
+npm install & ionic build & npx cap copy & npx cap sync & npx cap update & npx cap open android
 ``````
 
 ## Installation
