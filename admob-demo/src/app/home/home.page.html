@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Capacitor AdMob Demo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="margin-bottom: 100">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <h1>Banner</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+          <ion-button color="success" (click)="showBanner()">Show Banner</ion-button>
+          <ion-button color="secondary" (click)="showTabBarBanner()">Show TabBar Banner</ion-button>
+          <ion-button color="warning" (click)="hideBanner()">Hide Banner</ion-button>
+          <ion-button color="tertiary" (click)="resumeBanner()">Resume Banner</ion-button>
+          <ion-button color="danger" (click)="removeBanner()">Remove Banner</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col size="12">
+        <h1>Interstitial</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button color="tertiary" (click)="loadInterstitial()">Load Intertitial</ion-button>
+        <ion-button color="success" (click)="showInterstitial()">Show Interstitial</ion-button>
+        <ion-button color="tertiary" (click)="loadInterstitialVideo()">Load Interstitial Video</ion-button>
+        <ion-button color="success" (click)="showInterstitialVideo()">Show Interstitial Video</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col size="12">
+        <h1>Reward</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="padding-bottom: 100px;">
+      <ion-col size="12">
+        <ion-button color="tertiary" (click)="prepareRewardVideo()">Prepare Reward</ion-button>
+        <ion-button color="success" (click)="showRewardVideo()">Show Reward</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

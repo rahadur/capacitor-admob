@@ -1,10 +1,51 @@
-# [Capacitor AdMob](https://github.com/rahadur/capacitor-admob) 💰💰💰
+# [Capacitor 💰 AdMob](https://github.com/rahadur/capacitor-admob)
 
 Capacitor AdMob is a native AdMob  implementation for IOS & Android. Now you can use this package as a [Ionic Capacitor](https://capacitor.ionicframework.com) Plugin in your App.
 
-## Installation
 
-` npm install --save capacitor-admob`
+## Release Note 0.0.9:
+### Fixed Issues!
+
+- Plugin throws error when trying to show reward video **__[#2](https://github.com/rahadur/capacitor-admob/issues/2)__**
+- AD overlapping tabs **__[#4](https://github.com/rahadur/capacitor-admob/issues/4)__**
+
+- Cause: startup failed **__[#7](https://github.com/rahadur/capacitor-admob/issues/7)__**
+
+
+## AdMob Demo App
+### Screenshot
+| Basic Banner AD | TabBar Banner AD |
+| ------------- | ------------- |
+| ![Basic AdMob Banner](https://imgur.com/DQqpAD2)  | ![Basic AdMob Banner](https://imgur.com/pLcpqnn)  |
+
+
+Download Demo App from **[Here](https://github.com/rahadur/capacitor-admob/admob-demo)**
+```console
+$ cd admob-demo
+
+
+$ npm install
+
+$ ionic build
+
+$ npx cap copy
+
+$ npx cap sync 
+
+$ npx cap update
+
+$ npx cap open android
+
+============== Or just use this command ===========
+
+$ npm install & ionic build & npx cap copy & npx cap sync & npx cap update & npx cap open android
+``````
+
+## Installation
+Use **AdMob** plugins in your app.
+```console
+ npm install --save capacitor-admob
+ ```
 
 
 ## Android
@@ -51,7 +92,8 @@ Open our Ionic app __app.component.ts__ file and add this folloing code.
 
 ```typescript
 import { Plugins } from '@capacitor/core';
-import { initialize } from 'capacitor-admob';
+// import { initialize } from 'capacitor-admob'; No longar required
+
 
 const { AdMob } = Plugins;
 
@@ -113,6 +155,8 @@ export class AdMobComponent {
 ```
 
 
+
+
 ### hideBanner(): Promise<{ value: boolean }>
 
 ```typescript
@@ -139,7 +183,7 @@ AdMob.resumeBanner().then(
         console.log(value);  // true
     },
     (error) => {
-        console.err(error); // show error
+        console.error(error); // show error
     } 
 );
 ```
@@ -154,7 +198,7 @@ AdMob.removeBanner().then(
         console.log(value);  // true
     },
     (error) => {
-        console.err(error); // show error
+        console.error(error); // show error
     } 
 );
 ```
@@ -190,9 +234,12 @@ const { AdMob } = Plugins;
 export class AppComponent {
 
     const options: AdOptions = {
-        adId: 'YOUR ADID',
-        autoShow: false
-    }
+      adId: 'Your AD_Id',
+      adSize: AdSize.SMART_BANNER,
+      position: AdPosition.BOTTOM_CENTER,
+      hasTabBar: false,  // make it true if you have TabBar Layout.
+      tabBarHeight: 56  // you can assign custom margin in pixel default is 56
+    };
 
     constructor(){
 
@@ -203,7 +250,7 @@ export class AppComponent {
                 console.log(value);  // true
             },
             (error) => {
-                console.err(error); // show error
+                console.error(error); // show error
             } 
         );
 
@@ -230,7 +277,7 @@ AdMob.showInterstitial().then(
         console.log(value);  // true
     },
     (error) => {
-        console.err(error); // show error
+        console.error(error); // show error
     } 
 );
 ```
@@ -280,16 +327,14 @@ export class AAdMobComponent {
                 console.log(value);  // true
             },
             (error) => {
-                console.err(error); // show error
+                console.error(error); // show error
             } 
         );
 
 
         // Subscibe ReWardVideo Event Listener
         AdMob.addListener('onRewardedVideoAdLoaded', (info: boolean) => {
-            
             // You can call showRewardVideoAd() here or anytime you want.
-
              console.log("RewardedVideoAd Loaded");
         });
     }
@@ -307,7 +352,7 @@ AdMob.showRewardVideoAd().then(
         console.log(value);  // true
     },
     (error) => {
-        console.err(error); // show error
+        console.error(error); // show error
     } 
 );
 ```
@@ -323,7 +368,7 @@ AdMob.pauseRewardedVideo().then(
         console.log(value);  // true
     },
     (error) => {
-        console.err(error); // show error
+        console.error(error); // show error
     } 
 );
 ```
@@ -339,7 +384,7 @@ AdMob.resumeRewardedVideo().then(
         console.log(value);  // true
     },
     (error) => {
-        console.err(error); // show error
+        console.error(error); // show error
     } 
 );
 ```
@@ -354,7 +399,7 @@ AdMob.stopRewardedVideo().then(
         console.log(value);  // true
     },
     (error) => {
-        console.err(error); // show error
+        console.error(error); // show error
     } 
 );
 ```
@@ -387,6 +432,8 @@ interface AdOptions {
   adId: string;
   adSize?: AdSize;
   position?: AdPosition;
+  hasTabBar?: boolean; // optional: default false
+  tabBarHeight?: number; // set cutom height in pixal default is 56
 }
 ```
 

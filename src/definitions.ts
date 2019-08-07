@@ -110,6 +110,8 @@ export interface AdOptions {
   height?: number;
   x?: number;
   y?: number;
+  hasTabBar?: boolean;
+  tabBarHeight?: number; // Height in Pixal
   isTesting?: boolean;
   autoShow?: boolean
   orientationRenew?: boolean;

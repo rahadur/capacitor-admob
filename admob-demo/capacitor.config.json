@@ -1,0 +1,7 @@
+{
+  "appId": "com.capacitor.admob",
+  "appName": "admob-demo",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

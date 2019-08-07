@@ -1,0 +1,7 @@
+{
+  "name": "admob-demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
