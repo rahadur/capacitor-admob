@@ -394,15 +394,18 @@ public class AdMob extends Plugin {
             ca-app-pub-3940256099942544/5224354917
         */
         final String adId = call.getString("adId", "ca-app-pub-3940256099942544/5224354917");
+        
+        final String userId = call.getString("userId", "");
 
         try {
             mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(getContext());
-
+            
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    mRewardedVideoAd.setUserId(userId);
+                    
                     mRewardedVideoAd.loadAd(adId, new AdRequest.Builder().build());
-
                     
                     mRewardedVideoAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
                         @Override
