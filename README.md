@@ -433,6 +433,7 @@ interface AdOptions {
   position?: AdPosition;
   hasTabBar?: boolean; // optional: default false
   tabBarHeight?: number; // set cutom height in pixal default is 56
+  userId?: string; // Optional user ID, useful when using SSV
 }
 ```
 
