@@ -117,6 +117,7 @@ export interface AdOptions {
   orientationRenew?: boolean;
   adExtras?: AdExtras;
   offsetTopBar?: boolean;
+  userId?: string;
 }
 
 
