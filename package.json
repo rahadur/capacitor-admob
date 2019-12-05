@@ -1,6 +1,6 @@
 {
   "name": "capacitor-admob",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "This is Ionic Capacitor native AdMob plugin for IOS & Android",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -16,9 +16,9 @@
     "@capacitor/core": "latest"
   },
   "devDependencies": {
-    "typescript": "^3.2.4",
+    "@capacitor/android": "latest",
     "@capacitor/ios": "latest",
-    "@capacitor/android": "latest"
+    "typescript": "^3.7.3"
   },
   "files": [
     "dist/",
