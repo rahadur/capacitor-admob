@@ -8,22 +8,21 @@ Capacitor AdMob is a native AdMob implementation for IOS & Android. Now you can 
 
 ## Release Note:
 
-### [v1.0.0](https://github.com/rahadur/capacitor-admob/tree/v1.0.0)
+### [v0.1.0](https://github.com/rahadur/capacitor-admob/tree/v0.1.0)
 
 - Implement AdMob iOS SDK.
 
 ### [v0.0.9](https://github.com/rahadur/capacitor-admob/tree/v0.0.9)
 
-- Fixed Plugin throws error when trying to show reward video \***\*[#2](https://github.com/rahadur/capacitor-admob/issues/2)\*\***
-- Fixed AD overlapping tabs \***\*[#4](https://github.com/rahadur/capacitor-admob/issues/4)\*\***
+- Fixed Plugin throws error when trying to show reward video **[#2](https://github.com/rahadur/capacitor-admob/issues/2)**
+- Fixed AD overlapping tabs **[#4](https://github.com/rahadur/capacitor-admob/issues/4)**
 
-- Fixed Cause: startup failed \***\*[#7](https://github.com/rahadur/capacitor-admob/issues/7)\*\***
+- Fixed Cause: startup failed **[#7](https://github.com/rahadur/capacitor-admob/issues/7)**
 
 ## Supported Platform
 
 - [x] Android
 - [x] iOS
-- [] Electron
 
 ## Other Plugins:
 
@@ -32,6 +31,8 @@ Capacitor AdMob is a native AdMob implementation for IOS & Android. Now you can 
 | [MoPub](https://github.com/rahadur/capacitor-mopub) | ✅      | ❌  | ❌       | ❌  |
 
 ## AdMob Demo App
+
+Download Demo App from **[Here](https://github.com/rahadur/capacitor-admob/tree/master/admob-demo)**
 
 ## Screenshot
 
@@ -47,7 +48,6 @@ Capacitor AdMob is a native AdMob implementation for IOS & Android. Now you can 
 | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | ![Alt text](/screenshort/android/banner_ad.png?raw=true "Banner AD") | ![Intertitial AD ](/screenshort/android/intertitial_ad.png?raw=true "Intertitial AD ") | ![Intertitial Video AD](/screenshort/android/intertitial_video_ad.png?raw=true "Intertitial Video AD ") | ![Reward Video AD](/screenshort/android/reward_ad.png?raw=true "Reward Video AD") |
 
-Download Demo App from **[Here](https://github.com/rahadur/capacitor-admob/tree/master/admob-demo)**
 
 ```console
 cd admob-demo
