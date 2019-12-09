@@ -21,8 +21,8 @@ Capacitor AdMob is a native AdMob implementation for IOS & Android. Now you can 
 
 ## Supported Platform
 
-- [x] Android
 - [x] iOS
+- [x] Android
 
 ## Other Plugins:
 
@@ -30,7 +30,11 @@ Capacitor AdMob is a native AdMob implementation for IOS & Android. Now you can 
 | :-------------------------------------------------- | :------ | :-- | :------- | :-- |
 | [MoPub](https://github.com/rahadur/capacitor-mopub) | ✅      | ❌  | ❌       | ❌  |
 
-# Donation
+# 💰 For a Few Dollars More
+
+Thanks for considering donate.
+
+If this plugin help you to earn few dollars, please don't forget to share your profit, because **"Sharing is Caring"**. Your donation will inspire me a lot to give more time on open-source project & help you by creating more useful plugins.
 
 | Methond   | Type    | Amount | Link                                                                                             |
 | :-------- | :------ | :----- | :----------------------------------------------------------------------------------------------- |
