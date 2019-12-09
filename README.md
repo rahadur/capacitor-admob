@@ -30,6 +30,16 @@ Capacitor AdMob is a native AdMob implementation for IOS & Android. Now you can 
 | :-------------------------------------------------- | :------ | :-- | :------- | :-- |
 | [MoPub](https://github.com/rahadur/capacitor-mopub) | ✅      | ❌  | ❌       | ❌  |
 
+# Donation
+
+| Methond   | Type    | Amount | Link                                                                                             |
+| :-------- | :------ | :----- | :----------------------------------------------------------------------------------------------- |
+| Paypal.me | Once    | Any    | [paypal.me](https://www.paypal.me/xplatform)                                                     |
+| Paypal    | Monthly | \$5    | [paypal.com](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=76FEY9XUD9A98) |
+| Paypal    | Monthly | \$10   | [paypal.com](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HUQLAF8W5M2FA) |
+| Paypal    | Monthly | \$25   | [paypal.com](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RWELCRVN64GHC) |
+| Paypal    | Monthly | \$50   | [paypal.com](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7C4EEH6ELENKA) |
+
 ## AdMob Demo App
 
 Download Demo App from **[Here](https://github.com/rahadur/capacitor-admob/tree/master/admob-demo)**
@@ -38,16 +48,15 @@ Download Demo App from **[Here](https://github.com/rahadur/capacitor-admob/tree/
 
 ### iOS
 
-| Basic Banner AD                                                  | Intertitial AD                                                                     | Intertitial Video AD                                                                                | Reward Video AD                                                               |
+| Basic Banner AD                                                  | Interstitial AD                                                                    | Interstitial Video AD                                                                               | Reward Video AD                                                               |
 | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | ![Alt text](/screenshort/ios/banner_ad.png?raw=true "Banner AD") | ![Intertitial AD ](/screenshort/ios/intertitial_ad.png?raw=true "Intertitial AD ") | ![Intertitial Video AD](/screenshort/ios/intertitial_video_ad.png?raw=true "Intertitial Video AD ") | ![Reward Video AD](/screenshort/ios/reward_ad.png?raw=true "Reward Video AD") |
 
 ### Android
 
-| Basic Banner AD                                                      | Intertitial AD                                                                         | Intertitial Video AD                                                                                    | Reward Video AD                                                                   |
+| Basic Banner AD                                                      | Interstitial AD                                                                        | Interstitial Video AD                                                                                   | Reward Video AD                                                                   |
 | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | ![Alt text](/screenshort/android/banner_ad.png?raw=true "Banner AD") | ![Intertitial AD ](/screenshort/android/intertitial_ad.png?raw=true "Intertitial AD ") | ![Intertitial Video AD](/screenshort/android/intertitial_video_ad.png?raw=true "Intertitial Video AD ") | ![Reward Video AD](/screenshort/android/reward_ad.png?raw=true "Reward Video AD") |
-
 
 ```console
 cd admob-demo
