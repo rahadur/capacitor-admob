@@ -163,7 +163,8 @@ const { AdMob } = Plugins;
 export class AppComponent {
   constructor() {
     // Initialize AdMob for your Application
-    AdMob.initialize("YOUR APPID");
+    // For Android you can optionally pass in a list of test device ids
+    AdMob.initialize("YOUR APPID", ['OPTIONAL TEST IDS']);
   }
 }
 ```
