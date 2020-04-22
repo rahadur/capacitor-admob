@@ -1,7 +1,7 @@
 package app.xplatform.capacitor.plugins;
 
 import android.Manifest;
-import android.support.design.widget.CoordinatorLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -137,11 +137,14 @@ public class AdMob extends Plugin {
                     mAdViewLayoutParams.gravity = Gravity.TOP;
                     break;
                 case "CENTER":
-                    mAdViewLayoutParams.gravity = Gravity.CENTER;
-                    break;
+                  mAdViewLayoutParams.gravity = Gravity.CENTER;
+                  break;
+                case "BOTTOM_CENTER":
+                  mAdViewLayoutParams.gravity = Gravity.BOTTOM | Gravity.CENTER;
+                  break;
                 default:
-                    mAdViewLayoutParams.gravity = Gravity.BOTTOM;
-                    break;
+                  mAdViewLayoutParams.gravity = Gravity.BOTTOM;
+                  break;
             }
 
 
@@ -357,7 +360,7 @@ public class AdMob extends Plugin {
         }
     }
 
-    
+
     // Show interstitial Ad
     @PluginMethod()
     public void showInterstitial(final PluginCall call) {
@@ -403,7 +406,7 @@ public class AdMob extends Plugin {
                 public void run() {
                     mRewardedVideoAd.loadAd(adId, new AdRequest.Builder().build());
 
-                    
+
                     mRewardedVideoAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
                         @Override
                         public void onRewardedVideoAdLoaded() {
@@ -482,7 +485,7 @@ public class AdMob extends Plugin {
        }
    }
 
-   
+
     // Pause a RewardVideoAd
     @PluginMethod()
     public void pauseRewardedVideo(PluginCall call) {
@@ -499,7 +502,7 @@ public class AdMob extends Plugin {
         }
     }
 
-    
+
     // Resume a RewardVideoAd
     @PluginMethod()
     public void resumeRewardedVideo(PluginCall call) {
@@ -516,7 +519,7 @@ public class AdMob extends Plugin {
         }
     }
 
-    
+
     // Destroy a RewardVideoAd
     @PluginMethod()
     public void stopRewardedVideo(PluginCall call) {
