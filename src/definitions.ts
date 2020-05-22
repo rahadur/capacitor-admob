@@ -8,8 +8,8 @@ declare global {
 
 export interface AdMobPlugin {
 
-  // Initialize AdMob with appId
-  initialize(options: { appId: string }): Promise<{ value: boolean }>
+  // Initialize AdMob with appId and optional test device IDs
+  initialize(options: { appId: string, testIds?: string[] }): Promise<{ value: boolean }>
 
   // Show a banner Ad
   showBanner(options: AdOptions): Promise<{ value: boolean }>;

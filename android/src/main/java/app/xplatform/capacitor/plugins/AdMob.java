@@ -19,9 +19,13 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @NativePlugin(
@@ -59,6 +63,20 @@ public class AdMob extends Plugin {
 
         try {
             MobileAds.initialize(this.getContext(), appId);
+
+            List<String> testIds = call.getArray("testIds").toList();
+
+            if (testIds.size() > 0) {
+                List<String> testDevices = new ArrayList<>();
+                testDevices.add(AdRequest.DEVICE_ID_EMULATOR);
+
+                RequestConfiguration requestConfiguration
+                        = new RequestConfiguration.Builder()
+                        .setTestDeviceIds(testDevices)
+                        .build();
+                MobileAds.setRequestConfiguration(requestConfiguration);
+            }
+
 
             mViewGroup = (ViewGroup) ((ViewGroup) getActivity().findViewById(android.R.id.content)).getChildAt(0);
 
