@@ -290,8 +290,6 @@ public class AdMob extends Plugin {
     }
 
 
-
-
     // Prepare interstitial Ad
     @PluginMethod()
     public void prepareInterstitial(final PluginCall call) {
@@ -308,54 +306,54 @@ public class AdMob extends Plugin {
             mInterstitialAd.setAdUnitId(adId);
 
 
-            getActivity().runOnUiThread(new Runnable() {
+            getBridge().getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
-                    mInterstitialAd.setAdListener(new AdListener() {
-                        @Override
-                        public void onAdLoaded() {
-                            // Code to be executed when an ad finishes loading.
-                            notifyListeners("onAdLoaded", new JSObject().put("value", true));
-                            call.success(new JSObject().put("value", true));
-                            super.onAdLoaded();
+                mInterstitialAd.setAdListener(new AdListener() {
+                    @Override
+                    public void onAdLoaded() {
+                        // Code to be executed when an ad finishes loading.
+                        notifyListeners("onInterstitialAdLoaded", new JSObject().put("value", true));
+                        call.success(new JSObject().put("value", true));
+                        super.onAdLoaded();
 
-                        }
+                    }
 
-                        @Override
-                        public void onAdFailedToLoad(int errorCode) {
-                            // Code to be executed when an ad request fails.
-                            notifyListeners("onAdFailedToLoad", new JSObject().put("errorCode", errorCode));
-                            super.onAdFailedToLoad(errorCode);
-                        }
+                    @Override
+                    public void onAdFailedToLoad(int errorCode) {
+                        // Code to be executed when an ad request fails.
+                        notifyListeners("onInterstitialAdFailedToLoad", new JSObject().put("errorCode", errorCode));
+                        super.onAdFailedToLoad(errorCode);
+                    }
 
-                        @Override
-                        public void onAdOpened() {
-                            // Code to be executed when the ad is displayed.
-                            notifyListeners("onAdOpened", new JSObject().put("value", true));
-                            super.onAdOpened();
-                        }
+                    @Override
+                    public void onAdOpened() {
+                        // Code to be executed when the ad is displayed.
+                        notifyListeners("onInterstitialAdOpened", new JSObject().put("value", true));
+                        super.onAdOpened();
+                    }
 
-                        @Override
-                        public void onAdLeftApplication() {
-                            // Code to be executed when the user has left the app.
-                            notifyListeners("onAdLeftApplication", new JSObject().put("value", true));
-                            super.onAdLeftApplication();
-                        }
+                    @Override
+                    public void onAdLeftApplication() {
+                        // Code to be executed when the user has left the app.
+                        notifyListeners("onInterstitialAdLeftApplication", new JSObject().put("value", true));
+                        super.onAdLeftApplication();
+                    }
 
-                        @Override
-                        public void onAdClosed() {
-                            // Code to be executed when when the interstitial ad is closed.
-                            notifyListeners("onAdClosed", new JSObject().put("value", true));
-                            super.onAdClosed();
-                        }
-                    });
+                    @Override
+                    public void onAdClosed() {
+                        // Code to be executed when when the interstitial ad is closed.
+                        notifyListeners("onInterstitialAdClosed", new JSObject().put("value", true));
+                        super.onAdClosed();
+                    }
+                });
 
                 }
             });
 
-        }catch (Exception ex) {
+        } catch (Exception ex) {
             call.error(ex.getLocalizedMessage(), ex);
         }
     }
@@ -365,11 +363,11 @@ public class AdMob extends Plugin {
     @PluginMethod()
     public void showInterstitial(final PluginCall call) {
         try {
-            getActivity().runOnUiThread(new Runnable() {
+            getBridge().getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                 if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
-                    getActivity().runOnUiThread(new Runnable() {
+                    getBridge().getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             mInterstitialAd.show();
@@ -381,7 +379,7 @@ public class AdMob extends Plugin {
                 }
                 }
             });
-        }catch (Exception ex){
+        } catch (Exception ex) {
             call.error(ex.getLocalizedMessage(), ex);
         }
     }
