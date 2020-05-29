@@ -6,18 +6,14 @@
 
 Capacitor AdMob is a native AdMob implementation for IOS & Android. Now you can use this package as a [Ionic Capacitor](https://capacitor.ionicframework.com) Plugin in your App.
 
-## Release Note:
+## Changelog:
 
-### [v0.1.0](https://github.com/rahadur/capacitor-admob/tree/v0.1.0)
+### [v1.0.0](https://github.com/rahadur/capacitor-admob/tree/v1.0.0)
+- Fixed Androidx CoordinatorLayout **[#35](https://github.com/rahadur/capacitor-admob/issues/35)**
+- Fixed Banner and interstitial share the same Event Listeners **[#40](https://github.com/rahadur/capacitor-admob/issues/40)**
 
-- Implement AdMob iOS SDK.
+#### [Previous Release](./CHANGELOG.md)
 
-### [v0.0.9](https://github.com/rahadur/capacitor-admob/tree/v0.0.9)
-
-- Fixed Plugin throws error when trying to show reward video **[#2](https://github.com/rahadur/capacitor-admob/issues/2)**
-- Fixed AD overlapping tabs **[#4](https://github.com/rahadur/capacitor-admob/issues/4)**
-
-- Fixed Cause: startup failed **[#7](https://github.com/rahadur/capacitor-admob/issues/7)**
 
 ## Supported Platform
 
@@ -304,7 +300,7 @@ export class AppComponent {
     );
 
     // Subscibe Banner Event Listener
-    AdMob.addListener("onAdLoaded", (info: boolean) => {
+    AdMob.addListener("onInterstitialAdLoaded", (info: boolean) => {
       // You can call showInterstitial() here or anytime you want.
 
       console.log("Interstitial Ad Loaded");
@@ -333,15 +329,15 @@ AdMob.showInterstitial().then(
 This following Event Listener can be called in **Interstitial AD**
 
 ```typescript
-addListener(eventName: 'onAdLoaded', listenerFunc: (info: any) => void): PluginListenerHandle;
+ addListener(eventName: 'onInterstitialAdLoaded', listenerFunc: (info: any) => void): PluginListenerHandle;
 
-addListener(eventName: 'onAdFailedToLoad', listenerFunc: (info: any) => void): PluginListenerHandle;
+addListener(eventName: 'onInterstitialAdFailedToLoad', listenerFunc: (info: any) => void): PluginListenerHandle;
 
-addListener(eventName: 'onAdOpened', listenerFunc: (info: any) => void): PluginListenerHandle;
+addListener(eventName: 'onInterstitialAdOpened', listenerFunc: (info: any) => void): PluginListenerHandle;
 
-addListener(eventName: 'onAdClosed', listenerFunc: (info: any) => void): PluginListenerHandle;
+addListener(eventName: 'onInterstitialAdLeftApplication', listenerFunc: (info: any) => void): PluginListenerHandle;
 
-addListener(eventName: 'onAdLeftApplication', listenerFunc: (info: any) => void): PluginListenerHandle;
+addListener(eventName: 'onInterstitialAdClosed', listenerFunc: (info: any) => void): PluginListenerHandle;
 ```
 
 ## 📌 RewardVideo
@@ -530,4 +526,26 @@ enum AdPosition {
 
 ## License
 
-Capacitor AdMob is [MIT licensed](../../Desktop/capacitor-admob/LICENSE).
+```
+The MIT License
+
+Copyright (c) 2010-2018 Google, Inc. http://angularjs.org
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```

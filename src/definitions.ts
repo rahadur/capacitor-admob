@@ -63,7 +63,7 @@ export interface AdMobPlugin {
   // getAdSettings(): Promise<any>;
 
 
-  // AdMob listeners
+  // AdMob Banner AD Listeners
   addListener(eventName: 'onAdLoaded', listenerFunc: (info: any) => void): PluginListenerHandle;
 
   addListener(eventName: 'onAdFailedToLoad', listenerFunc: (info: any) => void): PluginListenerHandle;
@@ -78,7 +78,19 @@ export interface AdMobPlugin {
 
   addListener(eventName: 'onAdLeftApplication', listenerFunc: (info: any) => void): PluginListenerHandle;
 
-  // Admob RewardVideo listeners  
+    // AdMob Interstitial AD Listeners
+
+    addListener(eventName: 'onInterstitialAdLoaded', listenerFunc: (info: any) => void): PluginListenerHandle;
+
+    addListener(eventName: 'onInterstitialAdFailedToLoad', listenerFunc: (info: any) => void): PluginListenerHandle;
+  
+    addListener(eventName: 'onInterstitialAdOpened', listenerFunc: (info: any) => void): PluginListenerHandle;
+  
+    addListener(eventName: 'onInterstitialAdLeftApplication', listenerFunc: (info: any) => void): PluginListenerHandle;
+  
+    addListener(eventName: 'onInterstitialAdClosed', listenerFunc: (info: any) => void): PluginListenerHandle;
+
+  // AdMob RewardVideo AD Listeners  
   addListener(eventName: 'onRewardedVideoStarted', listenerFunc: (info: any) => void): PluginListenerHandle;
 
   addListener(eventName: 'onRewardedVideoAdClosed', listenerFunc: (info: any) => void): PluginListenerHandle;

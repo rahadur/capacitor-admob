@@ -236,19 +236,19 @@ public class AdMob: CAPPlugin, GADBannerViewDelegate, GADInterstitialDelegate, G
     /// Tells the delegate an ad request succeeded.
     private func interstitialDidReceiveAd(_ ad: GADInterstitial) {
         print("interstitialDidReceiveAd")
-        self.notifyListeners("onAdLoaded", data: ["value": true])
+        self.notifyListeners("onInterstitialAdLoaded", data: ["value": true])
     }
 
     /// Tells the delegate an ad request failed.
     private func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
         print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
-        self.notifyListeners("onAdFailedToLoad", data: ["error": error.localizedDescription])
+        self.notifyListeners("onInterstitialAdFailedToLoad", data: ["error": error.localizedDescription])
     }
 
     /// Tells the delegate that an interstitial will be presented.
     private func interstitialWillPresentScreen(_ ad: GADInterstitial) {
         print("interstitialWillPresentScreen")
-        self.notifyListeners("onAdOpened", data: ["value": true])
+        self.notifyListeners("onInterstitialAdOpened", data: ["value": true])
     }
 
     /// Tells the delegate the interstitial is to be animated off the screen.
@@ -259,14 +259,14 @@ public class AdMob: CAPPlugin, GADBannerViewDelegate, GADInterstitialDelegate, G
     /// Tells the delegate the interstitial had been animated off the screen.
     private func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         print("interstitialDidDismissScreen")
-        self.notifyListeners("onAdClosed", data: ["value": true])
+        self.notifyListeners("onInterstitialAdClosed", data: ["value": true])
     }
 
     /// Tells the delegate that a user click will open another app
     /// (such as the App Store), backgrounding the current app.
     private func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
         print("interstitialWillLeaveApplication")
-        self.notifyListeners("onAdLeftApplication", data: ["value": true])
+        self.notifyListeners("onInterstitialAdLeftApplication", data: ["value": true])
     }
     
     
