@@ -11,6 +11,7 @@ Capacitor AdMob is a native AdMob implementation for IOS & Android. Now you can 
 ### [v1.0.0](https://github.com/rahadur/capacitor-admob/tree/v1.0.0)
 - Fixed Androidx CoordinatorLayout **[#35](https://github.com/rahadur/capacitor-admob/issues/35)**
 - Fixed Banner and interstitial share the same Event Listeners **[#40](https://github.com/rahadur/capacitor-admob/issues/40)**
+- Fixed AdMob error in Mobile after build **[#48](https://github.com/rahadur/capacitor-admob/issues/48)**
 
 #### [Previous Release](./CHANGELOG.md)
 
