@@ -23,8 +23,6 @@ export class HomePage {
       adId: 'ca-app-pub-3940256099942544/6300978111',
       adSize: AdSize.SMART_BANNER,
       position: AdPosition.BOTTOM_CENTER,
-      hasTabBar: false,  // make it true if you have TabBar Layout.
-      tabBarHeight: 56  // you can assign custom margin in pixel default is 56
     };
 
     // Show Banner Ad
@@ -56,7 +54,7 @@ export class HomePage {
       adSize: AdSize.SMART_BANNER,
       position: AdPosition.BOTTOM_CENTER,
       hasTabBar: true,  // make it true if you have TabBar Layout.
-      tabBarHeight: 56  // you can assign custom margin in pixel default is 56
+      tabBarHeight: 56,  // you can assign custom margin in pixel default is 56
     };
 
     // Show Banner Ad
