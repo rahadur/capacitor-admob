@@ -1,6 +1,7 @@
 # node files
 dist/
 node_modules/
+admob-demo/
 
 # iOS files
 Pods
@@ -61,3 +62,5 @@ captures/
 
 # ScreenShort
 screenshort
+
+./CHANGELOG.md

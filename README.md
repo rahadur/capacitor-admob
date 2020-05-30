@@ -12,6 +12,7 @@ Capacitor AdMob is a native AdMob implementation for IOS & Android. Now you can 
 - Fixed Androidx CoordinatorLayout **[#35](https://github.com/rahadur/capacitor-admob/issues/35)**
 - Fixed Banner and interstitial share the same Event Listeners **[#40](https://github.com/rahadur/capacitor-admob/issues/40)**
 - Fixed AdMob error in Mobile after build **[#48](https://github.com/rahadur/capacitor-admob/issues/48)**
+- Fixed Ad overlaps tab bar iOS **[#27](https://github.com/rahadur/capacitor-admob/issues/27)**
 - Migrate Demo App to Capacitor 2.1.2
 
 #### [Previous Release](./CHANGELOG.md)
@@ -207,6 +208,52 @@ export class AdMobComponent {
 }
 ```
 
+### **Show TabBar Banner AD**
+
+```typescript
+import { Plugins } from "@capacitor/core";
+import { AdOptions, AdSize, AdPosition } from "capacitor-admob";
+
+const { AdMob } = Plugins;
+
+@Component({
+  selector: "admob",
+  templateUrl: "admob.component.html",
+  styleUrls: ["admob.component.scss"]
+})
+export class AdMobComponent {
+  options: AdOptions = {
+    adId: 'ca-app-pub-3940256099942544/6300978111',
+    adSize: AdSize.SMART_BANNER,
+    position: AdPosition.BOTTOM_CENTER,
+    hasTabBar: true,  // make it true if you have TabBar Layout.
+    tabBarHeight: 56  // you can assign custom margin in pixel default is 56
+  };
+
+  constructor() {
+    // Show TabBar Banner Ad
+    AdMob.showBanner(options)
+        .then(
+            async (value) => {
+              console.log(value);  // true
+              await Toast.show({
+                text: 'Showing TabBar Banner AD.'
+              })
+            },
+            (error) => {
+              console.error(error); // show error
+            }
+        );
+
+
+    // Subscribe Banner Event Listener
+    AdMob.addListener('onAdLoaded', async (info: boolean) => {
+      console.log('Showing TabBar Banner AD.');
+    });
+  }
+}
+```
+
 ### hideBanner(): Promise<{ value: boolean }>
 
 ```typescript
@@ -331,7 +378,7 @@ AdMob.showInterstitial().then(
 This following Event Listener can be called in **Interstitial AD**
 
 ```typescript
- addListener(eventName: 'onInterstitialAdLoaded', listenerFunc: (info: any) => void): PluginListenerHandle;
+addListener(eventName: 'onInterstitialAdLoaded', listenerFunc: (info: any) => void): PluginListenerHandle;
 
 addListener(eventName: 'onInterstitialAdFailedToLoad', listenerFunc: (info: any) => void): PluginListenerHandle;
 

@@ -4,6 +4,7 @@
 - Fixed Androidx CoordinatorLayout **[#35](https://github.com/rahadur/capacitor-admob/issues/35)**
 - Fixed Banner and interstitial share the same Event Listeners **[#40](https://github.com/rahadur/capacitor-admob/issues/40)**
 - Fixed AdMob error in Mobile after build **[#48](https://github.com/rahadur/capacitor-admob/issues/48)**
+- Fixed Ad overlaps tab bar iOS **[#27](https://github.com/rahadur/capacitor-admob/issues/27)**
 - Migrate Demo App to Capacitor 2.1.2
 
 ### [v0.1.0](https://github.com/rahadur/capacitor-admob/tree/v0.1.0)

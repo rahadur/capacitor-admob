@@ -31,8 +31,9 @@ public class AdMob: CAPPlugin, GADBannerViewDelegate, GADInterstitialDelegate, G
 
             let adSize = call.getString("adSize") ?? "SMART_BANNER"
             let adPosition = call.getString("position") ?? "BOTTOM_CENTER"
-            let adMargin = call.getString("margin") ?? "0"
+            let adMargin = call.getInt("tabBarHeight", 0) ?? 0
             var bannerSize = kGADAdSizeBanner
+            
 
             switch (adSize) {
             case "BANNER":
@@ -107,12 +108,12 @@ public class AdMob: CAPPlugin, GADBannerViewDelegate, GADInterstitialDelegate, G
         }
     }
 
-    private func addBannerViewToView(_ bannerView: GADBannerView, _ adPosition: String, _ Margin: String) {
+    private func addBannerViewToView(_ bannerView: GADBannerView, _ adPosition: String, _ Margin: Int) {
         removeBannerViewToView()
         if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
             NSLog("AdMob: rendering rootView")
             var toItem = rootViewController.bottomLayoutGuide
-            var adMargin = Int(Margin)!
+            var adMargin = Int(Margin)
 
             switch (adPosition) {
             case "TOP_CENTER":
