@@ -61,7 +61,7 @@ public class AdMob extends Plugin {
         try {
             MobileAds.initialize(this.getContext(), appId);
 
-            mViewGroup = (ViewGroup) ((ViewGroup) getBridge().getActivity()
+            mViewGroup = (ViewGroup) ((ViewGroup) getActivity()
                     .findViewById(android.R.id.content)).getChildAt(0);
 
             call.success();
@@ -158,7 +158,7 @@ public class AdMob extends Plugin {
 
 
             // Remove child from AdViewLayout
-            getBridge().getActivity().runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                 if (mAdView.getParent() != null) {
@@ -172,7 +172,7 @@ public class AdMob extends Plugin {
 
 
             // Run AdMob In Main UI Thread
-            getBridge().getActivity().runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                 mAdView.loadAd(new AdRequest.Builder().build());
@@ -220,7 +220,7 @@ public class AdMob extends Plugin {
     @PluginMethod()
     public void hideBanner(PluginCall call) {
         try {
-            getBridge().getActivity().runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     if (mAdViewLayout != null) {
@@ -242,7 +242,7 @@ public class AdMob extends Plugin {
     @PluginMethod()
     public void resumeBanner(PluginCall call) {
         try {
-            getBridge().getActivity().runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                 if (mAdViewLayout != null && mAdView != null) {
@@ -266,7 +266,7 @@ public class AdMob extends Plugin {
     public void removeBanner(PluginCall call) {
         try {
             if (mAdView != null) {
-                getBridge().getActivity().runOnUiThread(new Runnable() {
+                getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         if (mAdView != null) {
@@ -304,7 +304,7 @@ public class AdMob extends Plugin {
             mInterstitialAd.setAdUnitId(adId);
 
 
-            getBridge().getActivity().runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                 mInterstitialAd.loadAd(new AdRequest.Builder().build());
@@ -361,11 +361,11 @@ public class AdMob extends Plugin {
     @PluginMethod()
     public void showInterstitial(final PluginCall call) {
         try {
-            getBridge().getActivity().runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                 if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
-                    getBridge().getActivity().runOnUiThread(new Runnable() {
+                    getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             mInterstitialAd.show();
@@ -396,7 +396,7 @@ public class AdMob extends Plugin {
             //mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(getContext());
             mRewardedVideoAd = new RewardedAd(getContext(), adId);
 
-            getBridge().getActivity().runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                 //mRewardedVideoAd.loadAd(adId, new AdRequest.Builder().build());
@@ -429,15 +429,15 @@ public class AdMob extends Plugin {
     @PluginMethod()
     public void showRewardVideoAd(final PluginCall call) {
         try {
-            getBridge().getActivity().runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                 if (mRewardedVideoAd != null && mRewardedVideoAd.isLoaded()) {
-                    getBridge().getActivity().runOnUiThread(new Runnable() {
+                    getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                         // mRewardedVideoAd.show();
-                        mRewardedVideoAd.show(getBridge().getActivity(), new RewardedAdCallback() {
+                        mRewardedVideoAd.show(getActivity(), new RewardedAdCallback() {
                             @Override
                             public void onRewardedAdOpened() {
                                 // Ad opened.
@@ -482,7 +482,7 @@ public class AdMob extends Plugin {
     @PluginMethod()
     public void pauseRewardedVideo(PluginCall call) {
         /*try {
-            getBridge().getActivity().runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     mRewardedVideoAd.pause(getContext());
@@ -501,7 +501,7 @@ public class AdMob extends Plugin {
     @PluginMethod()
     public void resumeRewardedVideo(PluginCall call) {
         /*try {
-            getBridge().getActivity().runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     mRewardedVideoAd.resume(getContext());
@@ -520,7 +520,7 @@ public class AdMob extends Plugin {
     @PluginMethod()
     public void stopRewardedVideo(PluginCall call) {
         /*try {
-            getBridge().getActivity().runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     mRewardedVideoAd.destroy(getContext());
