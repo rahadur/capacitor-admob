@@ -1,7 +1,13 @@
 {
-  "appId": "com.capacitor.admob",
-  "appName": "admob-demo",
+  "appId": "app.xplatform.capacitor.admobdemo",
+  "appName": "AdMob",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "www"
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
 }

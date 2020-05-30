@@ -1,8 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">admob-demo</string>
-    <string name="title_activity_main">admob-demo</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="fileprovider_authority">io.ionic.starter.fileprovider</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="app_name">AdMob</string>
+    <string name="title_activity_main">AdMob</string>
+    <string name="package_name">app.xplatform.capacitor.admobdemo</string>
+    <string name="custom_url_scheme">app.xplatform.capacitor.admobdemo</string>
 </resources>

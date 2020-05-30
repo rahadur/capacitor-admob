@@ -1,6 +1,4 @@
-package io.ionic.starter;
-
-import app.xplatform.capacitor.plugins.AdMob;
+package app.xplatform.capacitor.admobdemo;
 
 import android.os.Bundle;
 
@@ -8,6 +6,8 @@ import com.getcapacitor.BridgeActivity;
 import com.getcapacitor.Plugin;
 
 import java.util.ArrayList;
+
+import app.xplatform.capacitor.plugins.AdMob;
 
 public class MainActivity extends BridgeActivity {
   @Override
@@ -18,7 +18,7 @@ public class MainActivity extends BridgeActivity {
     this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
       // Additional plugins you've installed go here
       // Ex: add(TotallyAwesomePlugin.class);
-      add(AdMob.class);  // Add AdMob as a Capacitor Plugin
+      add(AdMob.class);
     }});
   }
 }

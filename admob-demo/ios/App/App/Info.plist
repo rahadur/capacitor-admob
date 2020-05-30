@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>admob-demo</string>
+        <string>AdMob</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -73,7 +73,13 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	
+	
+	<key>GADIsAdManagerApp</key>
+	<true/>
+
 	<key>GADApplicationIdentifier</key>
+	<!-- replace this value with your App ID key-->
 	<string>ca-app-pub-6564742920318187~7217030993</string>
 </dict>
 </plist>

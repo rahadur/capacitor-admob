@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-
 import { Plugins } from '@capacitor/core';
 import { AdOptions, AdSize, AdPosition } from 'capacitor-admob';
-import { async } from '@angular/core/testing';
+
 
 const { AdMob, Toast } = Plugins;
 
